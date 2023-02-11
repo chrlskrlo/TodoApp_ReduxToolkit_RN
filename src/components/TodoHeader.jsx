@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 
 const TodoHeader = () => {
@@ -12,7 +12,10 @@ const TodoHeader = () => {
         marginTop: 20,
       }} >Todo List</Text>
 
-      <View>
+      <View 
+      style={{
+        justifyContent:'center',
+        alignItems:'center'}}>
         <TextInput style={{
           borderColor: 'grey',
           borderWidth: 1,
@@ -25,6 +28,18 @@ const TodoHeader = () => {
           onChangeText={setTodo}
           value={todo}
         />
+        <TouchableOpacity 
+        style={{
+          backgroundColor:'black',
+          padding:10,
+          margin:10,
+          width:'80%',
+          borderRadius:5,
+          alignItems:'center'
+        }}
+        onPress={() => setTodo('')}>
+          <Text style={{color: 'white'}}>Add</Text>
+        </TouchableOpacity>
       </View>
     </View>
   )
